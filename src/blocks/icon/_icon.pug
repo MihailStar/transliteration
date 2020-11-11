@@ -1,0 +1,5 @@
+mixin icon(name, modifier)
+  svg.page-icon(
+    class=`page-icon_${modifier}` aria-hidden='true' focusable='false'
+  )&attributes(attributes)
+    use(xlink:href=`#icon-${name}`)/

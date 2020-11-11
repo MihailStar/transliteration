@@ -1,0 +1,5 @@
+.#{$body-class} {
+  .page-sprite {
+    @include visually-hidden;
+  }
+}

@@ -1,0 +1,78 @@
+.#{$body-class} {
+  .page-footer {
+    position: static;
+    padding: 39px 0 40px;
+    min-height: 0;
+    background-color: #242a34;
+
+    &__column {
+      display: flex;
+      flex-wrap: wrap;
+      @include grid-col(12 null null null);
+    }
+
+    &__copyright {
+      $font-size: 14px;
+      margin: 0;
+      width: 100%;
+      color: #fff;
+      text-align: center;
+      font-weight: 400;
+      font-size: $font-size;
+      font-family: 'Open Sans', sans-serif;
+      line-height: (34px / $font-size * 1em);
+      @include media('>=md') {
+        margin-right: (32px / $font-size * 1em);
+        width: auto;
+        text-align: left;
+      }
+    }
+  }
+
+  .submenu {
+    $font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    width: 100%;
+    font-size: $font-size;
+    @include media('>=md') {
+      justify-content: left;
+      width: auto;
+    }
+
+    &__item {
+      display: block;
+      margin-right: (15px / $font-size * 1em);
+      margin-left: (15px / $font-size * 1em);
+      @include media('>=md') {
+        margin-right: (34px / $font-size * 1em);
+        margin-left: 0;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__link {
+      display: block;
+      color: #fff;
+      text-decoration: underline;
+      font-weight: 400;
+      font-size: inherit;
+      font-family: 'Open Sans', sans-serif;
+      line-height: (34px / $font-size * 1em);
+      transition: color 0.2s;
+
+      &:hover,
+      &:focus {
+        outline: none;
+        color: #f36;
+      }
+    }
+  }
+}

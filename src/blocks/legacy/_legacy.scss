@@ -1,0 +1,25 @@
+.#{$body-class} {
+  .header .navbar-collapse {
+    @media (min-width: 768px) {
+      padding-left: 2px;
+    }
+  }
+
+  .header .top-menu li.min {
+    margin-right: 4px;
+  }
+
+  .header .nav-link:focus {
+    border-bottom-color: #fff;
+  }
+
+  .sites-bar a.min {
+    padding-right: 15px;
+    padding-left: 15px;
+    min-width: 0;
+  }
+
+  .sites-bar li:not(.active-site) a:focus {
+    background-color: #2a313c;
+  }
+}

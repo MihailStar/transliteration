@@ -1,0 +1,60 @@
+.#{$body-class} {
+  .page-header {
+    margin-bottom: 50px;
+    padding: 36px 0 50px;
+    background-color: #2958da;
+
+    &__column {
+      @include grid-col(12 null null null);
+    }
+
+    &__title {
+      $font-size: 36px;
+      margin-top: 0;
+      margin-bottom: (4px / $font-size * 1em);
+      color: #fff;
+      text-align: center;
+      font-weight: 700;
+      font-size: $font-size - 14;
+      font-family: 'Fira Sans', sans-serif;
+      line-height: (50px / $font-size * 1em);
+      @include media('>=md') {
+        font-size: $font-size - 6;
+      }
+      @include media('>=lg') {
+        font-size: $font-size - 4;
+      }
+      @include media('>=xl') {
+        font-size: $font-size;
+      }
+    }
+
+    &__description {
+      $font-size: 22px;
+      margin-top: 0;
+      margin-bottom: (30px / $font-size * 1em);
+      color: #fff;
+      text-align: center;
+      font-weight: 400;
+      font-size: $font-size - 6;
+      font-family: 'Open Sans', sans-serif;
+      line-height: (35px / $font-size * 1em);
+      @include media('>=md') {
+        font-size: $font-size - 4;
+      }
+      @include media('>=lg') {
+        font-size: $font-size - 2;
+      }
+      @include media('>=xl') {
+        font-size: $font-size;
+      }
+    }
+
+    &__advertising {
+      margin: 0 auto;
+      max-width: 728px;
+      background: url('../images/advertising.jpg') 50% 50% no-repeat;
+      @include size(100%, 90px);
+    }
+  }
+}

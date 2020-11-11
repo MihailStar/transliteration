@@ -1,0 +1,92 @@
+extends ./blocks/legacy/_legacy.pug
+
+block variables
+  - var pageTitle = 'Convert.world - Transliterate Text'
+  - var pageDescription = ''
+  - var bodyClass = 'site-transliterate'
+
+block head
+  link(
+    rel='stylesheet'
+    href='https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css'
+  )
+  link(rel='stylesheet' href='./styles/transliterate.min.css')
+
+block body
+  include ./blocks/header/_header.pug
+  include ./blocks/icon/_icon.pug
+  include ./blocks/button/_button.pug
+  include ./blocks/application/_application.pug
+
+block footer
+  include ./blocks/footer/_footer.pug
+  include ./blocks/sprite/_sprite.pug
+  include ./blocks/modal/_modal.pug
+
+block script
+  script(
+    src='https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js'
+  )
+  script(src='./scripts/autosize-input.min.js')
+  script.
+    var $inputTitle = $('#input-title');
+    var $inputText = $('#input-text');
+    var $inputFieldColor = $('#input-field-color');
+    var $outputFieldColor = $('#output-field-color');
+    var $inputTextColor = $('#input-text-color');
+    var $outputTextColor = $('#output-text-color');
+    var $inputFontFamily = $('#input-font-family');
+    var $buttonStart = $('#button-start');
+    var $buttonShift = $('#button-shift');
+    var $buttonReset = $('#button-reset');
+    var $keyboard = $('#keyboard');
+
+    autosizeInput($inputTitle[0], { minWidth: true });
+
+    $inputFieldColor.spectrum({
+      color: $inputFieldColor.css('background-color'),
+      change: function(color) {
+        $inputText.css('background-color', color.toHexString());
+        $inputFieldColor.css('background-color', color.toHexString());
+        $outputFieldColor.text(color.toHexString());
+      },
+    });
+
+    $inputTextColor.spectrum({
+      color: $inputTextColor.css('background-color'),
+      change: function(color) {
+        $inputText.css('color', color.toHexString());
+        $inputTextColor.css('background-color', color.toHexString());
+        $outputTextColor.text(color.toHexString());
+      },
+    });
+
+    $inputFontFamily.on('change', function() {
+      $inputText.css('font-family', $inputFontFamily.val());
+    });
+
+    $buttonReset.on('click', function() {
+      var defaultValue = '';
+
+      defaultValue = $inputFieldColor.data('default-value');
+      $inputText.css('background-color', defaultValue);
+      $inputFieldColor
+        .css('background-color', defaultValue)
+        .spectrum('set', defaultValue);
+      $outputFieldColor.text(defaultValue);
+
+      defaultValue = $inputTextColor.data('default-value');
+      $inputText.css('color', defaultValue);
+      $inputTextColor
+        .css('background-color', defaultValue)
+        .spectrum('set', defaultValue);
+      $outputTextColor.text(defaultValue);
+
+      $inputFontFamily.find('option').prop('selected', function() {
+        return this.defaultSelected;
+      });
+    });
+
+    $buttonShift.on('click', function() {
+      $keyboard.toggleClass('page-application__keyboard-buttons_uppercase');
+    });

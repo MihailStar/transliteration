@@ -1,0 +1,86 @@
+.modal.fade#modalLogin(tabindex='-1'
+  role='dialog'
+  aria-hidden='true'
+)
+  .modal-dialog(role='document')
+    .modal-content
+      button.close(type='button' data-dismiss='modal' aria-label='Close')
+        i.far.fa-times-circle
+      .modal-body
+        p.text-center.display-4.font-weight-bold.mb-4 Login
+        form.custom-form(method='POST' action='/login')
+          input(type='hidden' name='_token' value='')
+          .form-group
+            label(for='email2') E-mail
+            input.form-control#email2(
+              placeholder='Your E-mail'
+              type='email'
+              name='email'
+              value=''
+              required=''
+            )
+          .form-group
+            label(for='password2') Password
+            input.form-control#password2(
+              placeholder='Your Password'
+              type='password'
+              name='password'
+              required=''
+            )
+          .text-center.my-4.pt-4
+            button.btn.btn-success.btn-custom(type='submit') Login
+          .form-group.text-center.mt-4.pt-4
+            .custom-checkbox.mb-3
+              div
+                input#remember(type='checkbox' name='remember')
+                label(for='remember')
+              div Remember me
+            a(href='/password/reset') Forgot Your Password?
+.modal.fade#modalContact(
+  tabindex='-1'
+  role='dialog'
+  aria-hidden='true'
+)
+  .modal-dialog(role='document')
+    .modal-content
+      button.close(type='button' data-dismiss='modal' aria-label='Close')
+        i.far.fa-times-circle
+      .modal-body
+        p.text-center.display-4.font-weight-bold.mb-4 Contact
+        form.custom-form(method='POST' action='/contact')
+          input(type='hidden' name='_token' value='')
+          .form-group
+            label(for='name2') Name
+            input.form-control#name2(
+              placeholder='Name'
+              type='text'
+              name='name'
+              value=''
+              required=''
+            )
+          .form-group
+            label(for='email3') E-mail
+            input.form-control#email3(
+              placeholder='Your E-mail'
+              type='email'
+              name='email'
+              value=''
+              required=''
+            )
+          .form-group
+            label(for='type') Request
+            .select
+              select.form-control#type(name='type')
+                option(value='request') Request
+                option(value='bug report') Bug report
+                option(value='feedback') Feedback
+          .form-group
+            label(for='message') Message
+            textarea.form-control#message(
+              name='message'
+              required=''
+              rows='5'
+              placeholder='Text'
+            )
+          .text-center.my-4
+            button.btn.btn-success.btn-custom(type='submit') Submit

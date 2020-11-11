@@ -1,0 +1,10 @@
+mixin button(name, modifiers)
+  -
+    var classNames = modifiers
+      .split(' ')
+      .map((modifier) => `page-button_${modifier}`)
+  button.page-button(
+    class=classNames type='button'
+  )&attributes(attributes)
+    block
+    span= name

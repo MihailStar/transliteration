@@ -1,0 +1,262 @@
+.#{$body-class} {
+  .page-button {
+    $font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    vertical-align: middle;
+    text-align: left;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: $font-size;
+    font-family: 'Open Sans', sans-serif;
+    line-height: (24px / $font-size * 1em);
+    cursor: pointer;
+
+    &_header {
+      $font-size: 14px;
+      padding: (5px / $font-size * 1em) (12px / $font-size * 1em);
+      background-color: #1bbc9b;
+      color: #fff;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #1dc9a6;
+      }
+
+      &:focus {
+        outline: none;
+        background-color: #1ed2ad;
+      }
+
+      &:not(:last-child) {
+        margin-right: (12px / $font-size * 1em);
+      }
+    }
+
+    &_full-screen {
+      $font-size: 14px;
+      flex-shrink: 0;
+      justify-content: center;
+      border: 2px solid transparent;
+      border-radius: 0;
+      color: #2958da;
+      transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+      @include size(22px / $font-size * 1em);
+
+      &:hover,
+      &:focus {
+        outline: none;
+        border-color: #2958da;
+        background-color: #2958da;
+        color: #fff;
+      }
+
+      span {
+        @include visually-hidden;
+      }
+    }
+
+    &_keyboard {
+      $font-size: 22px;
+      justify-content: center;
+      border: 1px solid #fff;
+      background-color: #fff;
+      box-shadow: 0 2px 0 0 rgba(#12141d, 0.13);
+      color: #0f1f39;
+      text-align: center;
+      text-transform: inherit;
+      font-size: $font-size - 8;
+      line-height: (35px / $font-size * 1em);
+      transition: border-color 0.2s, background-color 0.2s;
+      @include size(56px / $font-size * 1em);
+      @include media('>=sm') {
+        font-size: $font-size - 6;
+      }
+      @include media('>=md') {
+        border-width: 2px;
+        font-size: $font-size - 4;
+      }
+      @include media('>=lg') {
+        font-size: $font-size - 3;
+      }
+      @include media('>=xl') {
+        border-radius: 16px;
+        font-size: $font-size;
+      }
+
+      &:hover,
+      &:focus {
+        outline: none;
+        border-color: #2958da;
+        background-color: #e9eefb;
+      }
+
+      &:not(:last-child) {
+        margin-right: (10px / $font-size * 1em);
+      }
+    }
+
+    &_keyboard-shift-key,
+    &_keyboard-space-key {
+      $font-size: 22px;
+      text-transform: uppercase;
+
+      &:not(:last-child) {
+        @include media('>=xl') {
+          margin-right: (16px / $font-size * 1em);
+        }
+      }
+    }
+
+    &_keyboard-shift-key {
+      $font-size: 22px;
+      width: (112px / $font-size * 1em);
+    }
+
+    &_keyboard-space-key {
+      $font-size: 22px;
+      width: (286px / $font-size * 1em);
+    }
+
+    &_main {
+      $font-size: 16px;
+      margin-bottom: 10px;
+      padding: (8px / $font-size * 1em) (12px / $font-size * 1em);
+      width: 100%;
+      border: 1px solid #209af0;
+      background-color: #fff;
+      color: #209af0;
+      font-weight: 500;
+      font-size: $font-size - 1;
+      font-family: 'Fira Sans', sans-serif;
+      line-height: (24px / $font-size * 1em);
+      transition: background-color 0.2s, color 0.2s;
+      @include media('>=md') {
+        margin-bottom: 0;
+        width: calc(100% / 3 - 10px);
+      }
+      @include media('>=lg') {
+        margin-bottom: 10px;
+        width: 100%;
+      }
+      @include media('>=xl') {
+        font-size: $font-size;
+      }
+
+      &:hover,
+      &:focus {
+        outline: none;
+        background-color: #209af0;
+        color: #fff;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &_main-active {
+      background-color: #209af0;
+      color: #fff;
+    }
+
+    &_options {
+      $font-size: 14px;
+      padding: (13px / $font-size * 1em) 0;
+      width: 100%;
+      border-radius: 0;
+      color: #0f1f39;
+      text-transform: uppercase;
+      font-weight: 700;
+      line-height: (25px / $font-size * 1em);
+      transition: color 0.2s;
+
+      &:hover,
+      &:focus {
+        outline: none;
+        color: lighten(#0f1f39, 50%);
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #d8e0ea;
+      }
+
+      &[disabled] {
+        color: #8497ad;
+        cursor: default;
+
+        &:hover,
+        &:focus {
+          color: #8497ad;
+        }
+      }
+    }
+
+    &_color-picker {
+      $font-size: 14px;
+      flex-shrink: 0;
+      margin-right: 10px;
+      border: 1px solid #d8e0ea;
+      @include size(24px / $font-size * 1em);
+
+      span {
+        @include visually-hidden;
+      }
+    }
+
+    &_reset {
+      display: inline-block;
+      color: #1bbc9b;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #1dc9a6;
+      }
+
+      &:hover,
+      &:focus {
+        outline: none;
+        color: lighten(#1bbc9b, 25%);
+      }
+    }
+
+    &_modal {
+      $font-size: 16px;
+      justify-content: center;
+      margin-bottom: 10px;
+      padding: (8px / $font-size * 1em) (12px / $font-size * 1em);
+      width: 100%;
+      background-color: #1bbc9b;
+      color: #fff;
+      font-weight: 700;
+      font-size: $font-size - 1;
+      font-family: 'Open Sans', sans-serif;
+      line-height: (24px / $font-size * 1em);
+      transition: background-color 0.2s, color 0.2s;
+
+      &:hover,
+      &:focus {
+        outline: none;
+        background-color: lighten(#1bbc9b, 10%);
+      }
+
+      &:not(:last-child) {
+        margin-right: (12px / $font-size * 1em);
+      }
+    }
+
+    &_modal-grey {
+      background-color: #6c757d;
+
+      &:hover,
+      &:focus {
+        outline: none;
+        background-color: lighten(#6c757d, 10%);
+      }
+    }
+  }
+}

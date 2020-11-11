@@ -1,0 +1,332 @@
+.#{$body-class} {
+  .page-application {
+    background-color: #fff;
+
+    &__left-column {
+      @include grid-col(12 null null 9);
+    }
+
+    &__right-column {
+      display: block;
+      @include grid-col(12 null null 3);
+      @include media('>=md') {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      @include media('>=lg') {
+        display: block;
+      }
+    }
+
+    &__header-buttons {
+      display: flex;
+      margin-bottom: 26px;
+    }
+
+    &__row {
+      display: flex;
+
+      &_input-title {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      &_textarea {
+        margin-bottom: 20px;
+        @include media('>=xl') {
+          margin-bottom: 30px;
+        }
+      }
+
+      &_keyboard {
+        justify-content: center;
+
+        &:not(:last-child) {
+          margin-bottom: 14px;
+        }
+      }
+
+      &_settings {
+        margin-bottom: 12px;
+      }
+    }
+
+    &__wrapper-input-title {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 8px;
+      padding-right: 33px;
+
+      &::after {
+        position: absolute;
+        top: 11px;
+        right: 10px;
+        background: url('../images/icon-pencil.svg') 50% 50% no-repeat;
+        content: '';
+        transition: opacity 0.2s;
+        @include size(13px);
+      }
+    }
+
+    &__input-title {
+      $line-height: 24px;
+      display: inline-block;
+      // padding: 0 33px 0 0;
+      padding: 0;
+      max-width: 100%;
+      height: 36px;
+      border: none;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      background-color: transparent;
+      color: #0f1f39;
+      font-weight: 700;
+      font-size: 18px;
+      font-family: 'Open Sans', sans-serif;
+      line-height: $line-height;
+      transition: border-color 0.2s;
+
+      &:focus {
+        border-color: #2958da;
+      }
+    }
+
+    &__wrapper-not-saved {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 8px;
+      width: 100%;
+      @include media('>=sm') {
+        width: auto;
+      }
+    }
+
+    &__not-saved {
+      margin-right: 8px;
+      padding: 0 14px;
+      border-radius: 8px;
+      background-color: rgba(#f0ad4e, 0.3);
+
+      span {
+        $font-size: 12px;
+        margin-right: 12px;
+        color: #55616f;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: $font-size;
+        font-family: 'Open Sans', sans-serif;
+        line-height: (24px / $font-size * 1em);
+      }
+
+      b {
+        $font-size: 14px;
+        color: #0f1f39;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: $font-size;
+        font-family: 'Open Sans', sans-serif;
+        line-height: (24px / $font-size * 1em);
+      }
+    }
+
+    &__textarea {
+      $font-size: 14px;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 20px;
+      min-height: 486px;
+      width: 100%;
+      border: 1px solid #d8e0ea;
+      border-radius: 8px;
+      background-color: transparent;
+      font-weight: 400;
+      font-size: $font-size;
+      font-family: sans-serif;
+      line-height: (24px / $font-size * 1em);
+      resize: vertical;
+      transition: border-color 0.2s;
+
+      &:focus {
+        outline: none;
+        border-color: #2958da;
+      }
+    }
+
+    &__keyboard-buttons {
+      margin-bottom: 20px;
+      padding: (33px / 847.5px * 100%);
+      border-radius: 16px;
+      background-color: #f8f8f8;
+      @include media('>=xl') {
+        margin-bottom: 74px;
+      }
+
+      &_uppercase {
+        text-transform: uppercase;
+      }
+    }
+
+    &__main-buttons {
+      display: block;
+      margin-bottom: 20px;
+      width: 100%;
+      background-color: #fff;
+      @include media('>=md') {
+        display: flex;
+        justify-content: space-between;
+      }
+      @include media('>=lg') {
+        display: block;
+      }
+    }
+
+    &__group {
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      width: 100%;
+      border: 1px solid #d8e0ea;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 2px 6px 0.2px rgba(#12141d, 0.2);
+      @include media('>=md') {
+        width: calc(100% / 2 - 10px);
+      }
+      @include media('>=lg') {
+        padding: 10px 15px;
+        width: 100%;
+      }
+      @include media('>=xl') {
+        padding: 10px 20px;
+      }
+    }
+  }
+
+  .page-settings {
+    &__title {
+      $font-size: 16px;
+      margin-top: 0;
+      margin-bottom: (14px / $font-size * 1em);
+      color: #0f1f39;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: $font-size;
+      font-family: 'Open Sans', sans-serif;
+      line-height: (30px / $font-size * 1em);
+    }
+
+    &__subtitle {
+      $font-size: 14px;
+      margin-top: 0;
+      margin-bottom: 0;
+      min-width: 96px;
+      color: #0f1f39;
+      font-weight: 700;
+      font-size: $font-size;
+      font-family: 'Open Sans', sans-serif;
+      line-height: (24px / $font-size * 1em);
+    }
+
+    &__output {
+      $font-size: 14px;
+      padding: 0;
+      max-width: 96px;
+      border: none;
+      background-color: transparent;
+      color: #55616f;
+      font-weight: 400;
+      font-size: $font-size;
+      font-family: 'Open Sans', sans-serif;
+      line-height: (24px / $font-size * 1em);
+      @include size(100%, (24px / $font-size * 1em));
+    }
+
+    &__select {
+      $font-size: 14px;
+      padding: 0 (30px / $font-size * 1em) 0 (10px / $font-size * 1em);
+      border: none;
+      border-radius: 8px;
+      background: #ebeff4 url('../images/icon-triangle.svg') top 50% right 10px
+        no-repeat;
+      color: #55616f;
+      font-weight: 400;
+      font-size: $font-size;
+      font-family: 'Open Sans', sans-serif;
+      line-height: (24px / $font-size * 1em);
+      cursor: pointer;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      @include size(100%, (24px / $font-size * 1em));
+
+      &::-ms-expand {
+        display: none;
+      }
+
+      option {
+        background-color: #fff;
+      }
+    }
+
+    &__line {
+      margin-top: 25px;
+      margin-bottom: 24px;
+      border: none;
+      border-bottom: 1px solid #d8e0ea;
+      @include size(100%, 0);
+    }
+
+    &__checkbox {
+      position: absolute;
+      z-index: -1;
+      margin: 10px 0 0 20px;
+      opacity: 0;
+
+      &:checked + label {
+        &::after {
+          content: none;
+        }
+      }
+    }
+
+    &__label {
+      $pseudo-size: 18px;
+      $font-size: 14px;
+      position: relative;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-right: ((10px + $pseudo-size) / $font-size * 1em);
+      color: #0f1f39;
+      font-weight: 700;
+      font-size: $font-size;
+      font-family: 'Open Sans', sans-serif;
+      line-height: (24px / $font-size * 1em);
+
+      &:active {
+        user-select: none;
+      }
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: (((24px - $pseudo-size) / 2) / $font-size * 1em);
+        right: 0;
+        border-radius: 4px;
+        background-color: transparent;
+        cursor: pointer;
+        @include size($pseudo-size);
+      }
+
+      &::before {
+        border: 1px solid #1bbc9b;
+        content: '';
+      }
+
+      &::after {
+        background: url('../images/icon-check-mark.svg') 50% 50% no-repeat;
+        content: '';
+      }
+    }
+  }
+}

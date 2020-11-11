@@ -1,0 +1,30 @@
+.#{$body-class} {
+  .page-icon {
+    flex-shrink: 0;
+    transition: fill 0.2s;
+    fill: currentColor;
+
+    &_header {
+      $font-size: 14px;
+      margin-right: (8px / $font-size * 1em);
+      width: (16px / $font-size * 1em);
+    }
+
+    &_full-screen {
+      $font-size: 14px;
+      width: (18px / $font-size * 1em);
+    }
+
+    &_main {
+      $font-size: 16px;
+      margin-right: (10px / $font-size * 1em);
+      width: (24px / $font-size * 1em);
+    }
+
+    &_options {
+      $font-size: 14px;
+      margin-right: (12px / $font-size * 1em);
+      width: (16px / $font-size * 1em);
+    }
+  }
+}

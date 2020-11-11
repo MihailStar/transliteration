@@ -1,0 +1,37 @@
+$body-class: 'site-transliterate';
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+$grid: map-merge(
+  $grid,
+  (
+    breakpoints: $breakpoints,
+    container: 15px null 25px 15px,
+  )
+);
+
+.#{$body-class} {
+  margin: 0;
+  padding-bottom: 0;
+
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  .grid {
+    max-width: (1140px + 15px * 2);
+    @include grid-container();
+
+    &__row {
+      @include grid-row();
+    }
+  }
+}

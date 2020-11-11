@@ -1,0 +1,14 @@
+.modal.modal_attention.fade#modalAttention(
+  tabindex='-1'
+  role='dialog'
+  aria-hidden='true'
+)
+  .modal-dialog(role='document')
+    .modal-content
+      button.close(type='button' data-dismiss='modal' aria-label='Close')
+        i.far.fa-times-circle
+      .modal-body
+        p.text-center.display-4.font-weight-bold.mb-4 Ready to become expert in converting files?
+      .modal-footer
+        +button('Cancel', 'modal modal-grey')
+        +button('Yes', 'modal')

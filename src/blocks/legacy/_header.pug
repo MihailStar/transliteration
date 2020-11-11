@@ -1,0 +1,81 @@
+.header
+  .container
+    nav.navbar.navbar-expand-md
+      a.logo.navbar-brand(href='/')
+        // display: block
+        img(src='https://convert66.com/assets/images/logo.png' alt='')
+        <span>Convert</span>.world
+      button.navbar-toggler(
+        type='button'
+        data-toggle='collapse'
+        data-target='#navbarSupportedContent'
+        aria-controls='navbarSupportedContent'
+        aria-expanded='false'
+        aria-label='Toggle navigation'
+      )
+        span.navbar-toggler-icon.fa.fa-bars
+      .collapse.navbar-collapse#navbarSupportedContent
+        ul.navbar-nav.top-menu
+          li.nav-item.min
+            a.nav-link.dropdown-toggle.all-directions-btn(href='#') All Directions
+          li.d-sm-none.signup
+            a(href='/sign-up') Sign up
+          li.d-sm-none.login
+            a(href='/login') Login
+          li.nav-item
+            a.nav-link(href='/sign-up') Pricing
+          li.nav-item
+            a.nav-link(
+              data-toggle='modal'
+              data-target='#modalContact'
+              href='#'
+            ) Contact
+        ul.right-top-menu.guest-menu.ml-auto
+          li.nav-item
+            a.btn.btn-sm.btn-outline-light(
+              data-toggle='modal'
+              data-target='#modalLogin'
+              href='#'
+            ) Login
+            // display: block
+            a.btn.btn-sm.btn-success(
+              href='/sign-up'
+            ) Sign up
+    ul.clearfix.sites-bar
+      li.nav-item
+        a(href='https://convert66.com') Convert files
+      li.nav-item
+        a(href='https://compress66.com') Compress files
+      li.nav-item
+        a(href='https://resize66.com') Resize images
+      li.nav-item
+        a(href='https://apps66.com/photo-editor') Edit images
+      li.nav-item
+        a.min(href='https://speedtest66.com') Test speed
+      li.nav-item
+        a(href='https://videodownloader66.com') Download video
+      li.active-site
+        a.min(href='/' tabindex='-1') Transliterate
+      li.dropdown
+        a.dropdown-toggle.active-site(
+          href='#'
+          data-toggle='dropdown'
+          role='button'
+          aria-expanded='false'
+        ) Apps66
+          span.caret
+        ul.dropdown-menu(role='menu')
+          li.nav-item
+            a(href='https://convert66.com') Convert files
+          li.nav-item
+            a(href='https://compress66.com') Compress files
+          li.nav-item
+            a(href='https://resize66.com') Resize images
+          li.nav-item
+            a(href='https://apps66.com/photo-editor') Edit images
+          li.nav-item
+            a(href='https://speedtest66.com') Test speed
+          li.nav-item
+            a(href='https://videodownloader66.com') Download video
+          li.nav-item
+            a(href='/' tabindex='-1') Transliterate
